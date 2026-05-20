@@ -9,6 +9,9 @@ Core Analysis & Logic
 Post-Attrition User Engagement
 I engineered a two-table join logic to isolate users who officially closed their accounts but still logged into the platform during the billing cycle. Identifying this specific segment helps the product team investigate technical tracking bugs or targeted win-back email campaigns.
 
+Active User Engagement Cohorts
+Using multi-tier CASE WHEN logic combined with table joins, I built an engagement classification matrix for active subscribers. By separating high-frequency users from inactive users who show zero monthly logins, this analysis flags accounts that are behaviorally decaying and highly vulnerable to churning.
+
 Technical Skills Applied
 - Relational Operations: Multi-table INNER JOIN executions mapping user states to log volumes.
 - Data Filtering: Applying multi-conditional WHERE clauses with strict case-sensitive string matching.
