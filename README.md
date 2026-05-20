@@ -14,4 +14,4 @@ Using multi-tier CASE WHEN logic combined with table joins, I built an engagemen
 
 Technical Skills Applied
 - Relational Operations: Multi-table INNER JOIN executions mapping user states to log volumes.
-- Data Filtering: Applying multi-conditional WHERE clauses with strict case-sensitive string matching.
+- Data Filtering: Applying multi-conditional WHERE clauses with strict case-sensitive string matching. 
