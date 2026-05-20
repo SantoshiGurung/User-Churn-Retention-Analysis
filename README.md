@@ -1,1 +1,14 @@
 # User-Churn-Retention-Analysis
+User Churn & Retention Analysis: Attrition Behavior Mapping
+
+Project Goal
+The objective of this capstone project is to analyze user activity patterns to understand why customers cancel their subscriptions. By cross-referencing account statuses with monthly activity logs, this analysis isolates core behavioral indicators of user attrition (churn) to help the product team design better retention strategies.
+
+Core Analysis & Logic
+
+Post-Attrition User Engagement
+I engineered a two-table join logic to isolate users who officially closed their accounts but still logged into the platform during the billing cycle. Identifying this specific segment helps the product team investigate technical tracking bugs or targeted win-back email campaigns.
+
+Technical Skills Applied
+- Relational Operations: Multi-table INNER JOIN executions mapping user states to log volumes.
+- Data Filtering: Applying multi-conditional WHERE clauses with strict case-sensitive string matching.
