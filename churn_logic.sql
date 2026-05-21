@@ -27,6 +27,31 @@ SELECT
     CASE 
         WHEN activity_logs.login_count > 20 THEN 'High Engagement' 
         WHEN activity_logs.login_count >= 1 THEN 'Standard Engagement' 
+
+    -- --------------------------------------------------------
+-- ANALYSIS 3: EXECUTIVE COHORT SUMMARY
+-- Uses a Common Table Expression (CTE) to aggregate total subscriber 
+-- volume across engagement tiers for the executive leadership team.
+-- --------------------------------------------------------
+
+WITH cohort_table AS (    
+    SELECT 
+        subscriptions.user_id,
+        CASE 
+            WHEN activity_logs.login_count > 20 THEN 'High Engagement' 
+            WHEN activity_logs.login_count >= 1 THEN 'Standard Engagement' 
+            ELSE 'At Risk of Churn' 
+        END AS engagement_tier 
+    FROM subscriptions 
+    JOIN activity_logs 
+        ON subscriptions.user_id = activity_logs.user_id
+    WHERE subscriptions.account_status = 'Active'
+)
+SELECT 
+    cohort_table.engagement_tier,
+    COUNT(cohort_table.user_id) AS total_users
+FROM cohort_table
+GROUP BY cohort_table.engagement_tier;
         ELSE 'At Risk of Churn' 
     END AS engagement_tier 
 FROM subscriptions 
